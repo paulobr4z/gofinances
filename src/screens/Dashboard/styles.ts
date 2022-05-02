@@ -71,5 +71,4 @@ export const HighlightsCards = styled.ScrollView.attrs({
 
   position: absolute;
   margin-top: ${RFPercentage(20)}px;
-
 `;
