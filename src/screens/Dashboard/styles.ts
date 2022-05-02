@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize'
-import Feather from 'react-native-vector-icons/Feather'
+import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
+import Feather from 'react-native-vector-icons/Feather';
 
 export const Container = styled.View`
   flex: 1;
