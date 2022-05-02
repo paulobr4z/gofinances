@@ -3,11 +3,13 @@ import { RFValue } from 'react-native-responsive-fontsize'
 import Feather from 'react-native-vector-icons/Feather'
 
 export const Container = styled.View`
-  width: ${RFValue(300)}px;
   background-color: ${({ theme }) => theme.colors.shape};
+
+  width: ${RFValue(300)}px;
   border-radius: 5px;
+
   padding: 19px 23px;
-  padding-bottom: 42px;
+  padding-bottom: ${RFValue(42)}px;
   margin-right: 16px;
 `;
 
