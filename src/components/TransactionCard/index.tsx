@@ -1,4 +1,5 @@
 import React from 'react';
+import { IDataList } from '../../types/dashboard';
 
 import {
   Container,
@@ -11,18 +12,25 @@ import {
   Date
 } from './styles';
 
+interface ITransactionCard {
+  data: IDataList;
+}
 
-export function TransactionCard() {
+
+export function TransactionCard({ data }: ITransactionCard) {
   return (
     <Container>
-      <Title>Desenvolvimento de site</Title>
-      <Amount>R$ 12.000,00</Amount>
+      <Title>{data.title}</Title>
+      <Amount type={data.type}>
+        {data.type === 'negative' && '- '}
+        {data.amount}
+      </Amount>
       <Footer>
         <Category>
-          <Icon name='dollar-sign' />
-          <CategoryName>Vendas</CategoryName>
+          <Icon name={data.category.icon} />
+          <CategoryName>{data.category.name}</CategoryName>
         </Category>
-        <Date>13/04/2020</Date>
+        <Date>{data.date}</Date>
       </Footer>
     </Container>
   );

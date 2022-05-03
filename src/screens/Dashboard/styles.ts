@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
+import { FlatList } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
-import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { Platform } from 'react-native';
 
 export const Container = styled.View`
@@ -87,3 +88,10 @@ export const Title = styled.Text`
 
   margin-bottom: 16px;
 `;
+
+export const TransactionsList = styled.FlatList.attrs({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingBottom: Platform.OS === 'ios' ? getBottomSpace() : 16
+  },
+})``;
