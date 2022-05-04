@@ -103,7 +103,7 @@ export function Dashboard() {
 
         <TransactionsList
           data={dataList}
-          keyExtractor={(item: any) => item.name}
+          keyExtractor={(_, index) => `id-${index}`}
           renderItem={({ item }: any) => <TransactionCard data={item} />}
         />
         

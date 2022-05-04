@@ -3,7 +3,7 @@ export interface ICategory {
   icon: string;
 }
 
-export default interface IDataList {
+export interface IDataList {
   id: string;
   type: 'positive' | 'negative';
   title: string;
