@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { FlatList } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
