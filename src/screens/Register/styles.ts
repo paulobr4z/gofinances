@@ -1,8 +1,5 @@
 import styled from 'styled-components/native';
-import Feather from 'react-native-vector-icons/Feather';
-import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
-import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
-import { Platform } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export const Container = styled.View`
   flex: 1;
@@ -30,7 +27,17 @@ export const Form = styled.View`
   flex: 1;
   justify-content: space-between;
   width: 100%;
+
   padding: 24px;
 `;
 
 export const Fields = styled.View``;
+
+export const TransactionsTypes = styled.View`
+  flex-direction: row;
+  margin: 16px 0;
+`;
+
+export const Separator = styled.View`
+  width: 8px;
+`;
