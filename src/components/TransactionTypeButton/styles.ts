@@ -22,8 +22,6 @@ export const Container = styled(TouchableOpacity)<IContainer>`
   border-width: ${({ isActive }) => isActive ? 0 : '1.5px' };
   border-style: solid;
   border-color: ${({ theme }) => theme.colors.text};
-
-
   border-radius: 5px;
 
   padding: 16px;

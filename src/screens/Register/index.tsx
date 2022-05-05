@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../../components/Button';
+import { CategotySelect } from '../../components/CategotySelect';
 import { Input } from '../../components/Input';
 import { TransactionTypeButton } from '../../components/TransactionTypeButton';
 
@@ -50,6 +51,10 @@ export function Register() {
               isActive={transactionType === 'down'}
             />
           </TransactionsTypes>
+
+          <CategotySelect
+            title='Categoria'
+          />
         </Fields>
 
         <Button title='Enviar' />
