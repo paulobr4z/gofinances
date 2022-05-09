@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { Button } from '../../components/Button';
-import { CategotySelect } from '../../components/CategotySelect';
-import { Input } from '../../components/Input';
-import { TransactionTypeButton } from '../../components/TransactionTypeButton';
+import { Modal } from 'react-native';
 
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { TransactionTypeButton } from '../../components/TransactionTypeButton';
+import { CategotySelectButton } from '../../components/CategotySelectButton';
+
+import { CategorySelect } from '../CategorySelect';
+ 
 import {
   Container,
   Header,
@@ -16,9 +20,23 @@ import {
 
 export function Register() {
   const [transactionType, setTransactionType] = useState('');
+  const [categoryModalOpen, setCategoryModalOpen] = useState(false);
+  
+  const [category, setCategory] = useState({
+    key: 'category',
+    name: 'Categoria',
+  });
 
-  function TransactionTypeSelect(type: string) {
+  function handleTransactionsTypeSelect(type: 'up' | 'down') {
     setTransactionType(type);    
+  }
+
+  function handleOpenSelectCategoryModal() {
+    setCategoryModalOpen(true);    
+  }
+
+  function handleCloseSelectCategoryModal() {
+    setCategoryModalOpen(false);    
   }
 
   return (
@@ -40,25 +58,34 @@ export function Register() {
             <TransactionTypeButton
               type='up'
               title='Income'
-              onPress={() => TransactionTypeSelect('up')}
+              onPress={() => handleTransactionsTypeSelect('up')}
               isActive={transactionType === 'up'}
             />
             <Separator />
             <TransactionTypeButton
               type='down'
               title='Outcome'
-              onPress={() => TransactionTypeSelect('down')}
+              onPress={() => handleTransactionsTypeSelect('down')}
               isActive={transactionType === 'down'}
             />
           </TransactionsTypes>
 
-          <CategotySelect
-            title='Categoria'
+          <CategotySelectButton
+            title={category.name}
+            onPress={handleOpenSelectCategoryModal}
           />
         </Fields>
 
         <Button title='Enviar' />
       </Form>
+
+      <Modal visible={categoryModalOpen}>
+        <CategorySelect
+          category={category}
+          setCategory={setCategory}
+          closeSelectCategory={handleCloseSelectCategoryModal}
+        />
+      </Modal>
 
     </Container>
   );

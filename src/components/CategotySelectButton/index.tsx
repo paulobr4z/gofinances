@@ -8,13 +8,15 @@ import {
 
 interface ICategotySelect {
   title: string;
+  onPress: () => void;
 }
 
-export function CategotySelect({
+export function CategotySelectButton({
   title,
+  onPress
 }: ICategotySelect) {
   return (
-    <Container>
+    <Container onPress={onPress}>
       <Category>{title}</Category>
       <Icon name="chevron-down" />
     </Container>

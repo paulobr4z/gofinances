@@ -2,7 +2,13 @@ import styled from 'styled-components/native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import Feather from 'react-native-vector-icons/Feather';
 
-export const Container = styled.View`
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+
+interface ICategory {
+  isActive: boolean
+}
+
+export const Container = styled(GestureHandlerRootView)`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.background};
 `;
@@ -24,12 +30,16 @@ export const Title = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
-export const Category = styled.View`
+export const Category = styled.TouchableOpacity<ICategory>`
   width: 100%;
   padding: ${RFValue(15)}px;
 
   flex-direction: row;
   align-items: center;
+
+  background-color: ${({ theme, isActive }) => 
+    isActive ? theme.colors.secondary_ligth : theme.colors.background
+  };
 `;
 
 export const Icon = styled(Feather)`
