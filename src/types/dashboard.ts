@@ -1,13 +1,8 @@
-export interface ICategory {
-  name: string;
-  icon: string;
-}
-
 export interface IDataList {
   id: string;
   type: 'positive' | 'negative';
-  title: string;
+  name: string;
   amount: string,
-  category: ICategory;
+  category: string;
   date: string;
 }
